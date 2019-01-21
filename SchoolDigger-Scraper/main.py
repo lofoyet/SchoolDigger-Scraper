@@ -48,15 +48,17 @@ class SchoolDiggerScraper(object):
         self.main_url = self.main_url.format(**locals())
         self.headers_page["referer"] = \
             self.headers_page["referer"].format(**locals())
-        self.form["values[resGSLInclude]"] = \
-            self.school_level_to_year[self.level]
+        self.headers_init["referer"] = \
+            self.headers_init["referer"].format(**locals())
+        self.form = self.forms[self.level]
+        self.form["values[FIPS]"] = self.state_to_fips[self.state]
         self.logger = logging.getLogger("SchoolDiggerScraper")
         self.data = []
 
     def download(self):
         session = requests.Session()
         # init run to get cookies
-        resp_init = session.get(self.main_url, headers=lib.utils.headers_init)
+        resp_init = session.get(self.main_url, headers=self.headers_init)
         if resp_init.status_code != 200:
             self.logger.error(
                 "Status code {}, job aborted".format(resp_init.status_code)
