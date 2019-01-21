@@ -3,10 +3,10 @@ from distutils.core import setup
 
 setup(
     name="SchoolDigger-Scraper",
-    version="0.1.0",
+    version="1.0.0",
+    python_requires=">=3.6",
     packages=[  # this will put these dirs into site-packges/
-        "SchoolDiggerScraper",
-        "SchoolDiggerScraper.lib",
+        "schooldiggerscraper",
     ],
     install_requires=[
         "beautifulsoup4==4.7.1",
@@ -15,7 +15,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "SchoolDiggerScrape=SchoolDiggerScraper.scrape:main",
+            "schooldiggerscraper=schooldiggerscraper.scrape:main",
         ],
     },
     description="Scrape school digger",

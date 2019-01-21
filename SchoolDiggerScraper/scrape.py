@@ -15,7 +15,6 @@ Todo:
 
 """
 import os
-import sys
 import json
 import time
 import urllib
@@ -25,7 +24,7 @@ import bs4
 import click
 import requests
 
-import scprautils  # noqa
+import schooldiggerscraper.utils  # noqa
 
 logging.basicConfig(level=logging.INFO)
 
@@ -40,10 +39,10 @@ class SchoolDiggerScraper(object):
                 setattr(self, k, v)
         self.out_path = os.path.join(
             out,
-            "{}_{}_data.json".format(state, scprautils.school_level[level])
+            "{}_{}_data.json".format(state, schooldiggerscraper.utils.school_level[level])
         )
         self.beautifulsoup = bs4.BeautifulSoup
-        for k, v in scprautils.__dict__.items():
+        for k, v in schooldiggerscraper.utils.__dict__.items():
             if not k.startswith("__"):
                 setattr(self, k, v)
         self.main_url = self.main_url.format(**locals())
@@ -154,7 +153,7 @@ class SchoolDiggerScraper(object):
 @click.option(
     "--state",
     help="State code",
-    type=click.Choice(scprautils.state_codes),
+    type=click.Choice(schooldiggerscraper.utils.state_codes),
 )
 @click.option(
     "--level",
