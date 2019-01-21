@@ -164,7 +164,7 @@ class SchoolDiggerScraper(object):
     "--out",
     help="Output directory",
     type=str,
-    default="./data",
+    default="/tmp",
 )
 @click.option(
     "--sleep",

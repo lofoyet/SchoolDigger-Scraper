@@ -23,7 +23,7 @@ pip install pipenv
 ## Pipenv install packages
 
 ```shell
-pipenv install
+pipenv install .
 ```
 ## Run scraper
 
@@ -31,15 +31,13 @@ pipenv install
 
 ```bash
 pipenv shell
-cd SchoolDigger-Scraper
-python main.py --state=MA --level=1 --max-page=1 --sleep=1
+schooldiggerscraper --state=MA --level=1 --max-page=1 --sleep=1 --out=./
 ```
 
 #### Or run
 
 ```bash
-cd SchoolDigger-Scraper
-pipenv run python main.py --state=MA --level=1 --max-page=1 --sleep=1
+pipenv run schooldiggerscraper --state=MA --level=1 --max-page=1 --sleep=1 --out=./
 ```
 
 
