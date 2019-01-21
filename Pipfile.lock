@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b2da767d7a5943e5dbb3313f88b27e3a55d781b8ba4f5658f082559f18008237"
+            "sha256": "13d5785808841619050af53c243f910268c52ffdf1c2060a7762c5d64f778a34"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -61,6 +61,9 @@
             ],
             "index": "pypi",
             "version": "==2.21.0"
+        },
+        "schooldigger-scraper": {
+            "path": "."
         },
         "soupsieve": {
             "hashes": [

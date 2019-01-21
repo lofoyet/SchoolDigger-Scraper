@@ -9,6 +9,7 @@ verify_ssl = true
 requests = "*"
 click = "*"
 beautifulsoup4 = "*"
+schooldigger-scraper = {path = "."}
 
 [requires]
 python_version = "3.7"
